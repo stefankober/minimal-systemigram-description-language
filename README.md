@@ -12,7 +12,35 @@ You may be interested if one of the following applies to you:
 
 - You teach systems thinking
 
-# But What Is Systems Thinking?
+# A Picture is Worth a Thousand Words
+
+## Wails Editor (Linux, Mac, Windows)
+
+![](images/wails-editor.png)
+
+On the left side an example of MSDL from the SysPatLib, on the left side the generated diagram. Systemigram rendered by dot, which is the default renderer because it creates systemigrams that are ok for almost any use case.
+
+## Offline HTML Editor
+
+![](images/html-editor.png)
+
+Systemigram rendered with circo, which is clearer, but flattens two-node-loops. That's why it has not been made default in the first version of the editor.
+
+# A GitHub Page is Worth Even More Than a Thousand words
+
+Try the editor here: [Systemigram Editor](https://stefankober.github.io/minimal-systemigram-description-language/)
+
+The help page will give you a good overview of what this project is about.
+
+From here you can jump to 
+
+[Download Section](#local-apps)
+
+[Repo Structure, Dependencies and Licensing](#repo-structure-dependencies-and-licensing)
+
+Or you can read:
+
+# A Very Short Introduction To Systems Thinking And Structured Systemigrams
 
 To explain systems thinking, one of the best places to start at is the definition of a system, more precisely the **Oops-definition of a system**.
 
@@ -106,31 +134,13 @@ The idea of this project is to build on systemigrams, but have them stand semant
 
 - All that with open source licenses. Contributions are welcome! 
 
-# A Picture is Worth a Thousand Words
-
-## Wails Editor (Linux, Mac, Windows)
-
-![](images/wails-editor.png)
-
-On the left side an example of MSDL from the SysPatLib, on the left side the generated diagram. Systemigram rendered by dot, which is the default renderer because it creates systemigrams that are ok for almost any use case.
-
-## Offline HTML editor / GitHub Page
-
-![](images/html-editor.png)
-
-Systemigram rendered with circo, which is clearer, but flattens two-node-loops. That's why it has not been made default in the first version of the editor.
-
-# A GitHub Page is Worth Even More Than a Thousand words
-
-Try the editor here: [Systemigram Editor](https://stefankober.github.io/minimal-systemigram-description-language/)
-
 # Local Apps
 
 For all options check out **[Release MSDL v0.1.0 – Initial Public Release](https://github.com/stefankober/minimal-systemigram-description-language/releases/tag/v0.1.0)**
 
 The editor size is tiny (<10MB), 256MB vs. 2GB refers only to the largest memory size of the diagrams. If you are not planning on exceptionally large diagrams 256MB is the best choice.
 
-### HTML editors. Operating system independent:
+### HTML editors. Operating system independent
 
 [msdl-html-editor-256MB.zip](https://github.com/stefankober/minimal-systemigram-description-language/releases/download/v0.1.0/msdl-html-editor-256MB.zip) (514 KB)
 
