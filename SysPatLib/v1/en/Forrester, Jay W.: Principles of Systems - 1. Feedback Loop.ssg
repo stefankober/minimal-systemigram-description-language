@@ -1,0 +1,39 @@
+/**********
+
+# Feedback Loop
+
+Adapted from:
+Forrester, Jay W.: Principles of Systems, MIT Press 1968, p. 1-8
+
+Forrester states that there are open and closed systems. Open systems are not aware of their performance, but closed systems react to their own performance via feedback loops. That is what makes them "closed". They are "influenced by their own past behavior". This definition depends on the viewpoint and interest of the observer. Pretty clear examples are however: a "dumb" watch is an open system, while a thermostat is a closed system, reacting to the temperature of its own making.
+
+Forrester observes that positive feedback is the source of growth, while negative feedback is the source of goal seeking behavior which is tied to fluctuation and instability. Think of it like positive feedback keeps the reported direction, while negative feedback turns it around: 
+source to control: "we a positive (negative) deviation! (a)" 
+control to source: "keep that! (+a)"
+vs.
+source to control: "we have a positive (negative) deviation from target! (a)"
+control to source: "revert it! (-a)"
+In the first process, there mey not be a target, it may just be the historic state from which the deviation is measured. In the second, that deviation measure, whatever it is, *becomes* a target.
+
+His diagram for the smallest feedback system is shown below in MSDL. Forrester points out that the information that is fed into the decision is past information. It comes from the *true level* (state, condition) of the system, but since there is a delay, it is about the *apparent level* of the system.
+
+The example is from page 1-10. The wording and form has been adjusted to fit MSDL and enriched by the context of the diagram.
+
+**********/
+
+{Feedback Loop}
+
+source (influences) level of the system.
+level of the system (produces) information about the system.
+information about the system (informs) decision.
+decision (influences) source.
+[decision]
+
+// Warehouse Example of negative feedback (comment above, then uncomment)
+/*
+ordering decision (generates potentially WITH DELAY, yellow) orders.
+orders (trigger sending goods potentially WITH DELAY to, yellow) inventory.
+inventory (is checked to generate) inventory information.
+inventory information (is used in) ordering decision.
+[ordering decision]
+*/

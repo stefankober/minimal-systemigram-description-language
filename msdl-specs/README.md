@@ -1,0 +1,1 @@
+The MSDL specs are licensed under Apache v2 license. See `License.txt`.

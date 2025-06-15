@@ -1,0 +1,26 @@
+/**********
+
+# How To Read A Reinforcement Cycle
+
+Adapted from:
+Senge, Peter: The Fifth Discipline, Currency Doubleday 1990, p. 82
+
+This is a very simple diagram, in which Senge teaches the reader how to read a reinforcement cycle.
+
+His diagrams do not carry as much direct visual metaphor as the ones from Meadow. Compare the diagram here to the one on which "Meadows, Donella: Thinking in Systems - 4. Reinforcing Loop.ssg" in this folder is based.
+
+While Meadows uses pipes and valves and separate control circles, Senge uses a plain circle of edges, and in the middle a sketched snowball rolling down a hill, to indicate **reinforcement**. Like Meadows he points out that the "behavior that results from a reinforcing loop is either accelerating growth or accelerating decline."
+
+Senge's syntax and semantics are close to MDSL, even a bit more restrictive.
+
+His example of a reinforcement circle is shown below. We chose red edges to mark reinforcement.
+In line with Senge's semantic we kept the word "influences", though we think more specific verbs are preferable where they exist. 
+Senge repeats his hint how to understand such a diagram: "Again, you can follow the process by walking yourself around the circle".
+
+**********/
+
+{How To Read A Reinforcement Cycle}
+
+sales (influences, red) satisfied customers.
+satisfied customers (influences, red) word of mouth.
+word of mouth (influences, red) sales.

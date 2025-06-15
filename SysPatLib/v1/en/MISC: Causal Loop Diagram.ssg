@@ -1,0 +1,26 @@
+/**********
+# Causal Loop: Adoption Model
+
+Adapted from:
+https://en.wikipedia.org/wiki/Causal_loop_diagram#Example_2
+
+This example shows one balancing loop (B1) and one reinforcing loop (R1)
+in an adoption model.
+
+- Colors are used to distinguish loops.
+- Arrows describe causal influence (not physical flow).
+- Loop names appear as labels within edge text, e.g., "increases R1".
+
+Note: Traditional causal loop diagrams use "+" and "–" for polarity.
+This version uses action verbs and semantic coloring instead.
+**********/
+
+{Causal Loop: Adoption Model}
+
+// B1: Balancing Loop — Market Saturation
+Adoption rate (decreases B1, blue) Potential Adopters.
+Potential Adopters (increases B1, red) Adoption rate.
+
+// R1: Reinforcing Loop — Word of Mouth
+Adopters (increases R1, red) Adoption rate.
+Adoption rate (increases R1, red) Adopters.

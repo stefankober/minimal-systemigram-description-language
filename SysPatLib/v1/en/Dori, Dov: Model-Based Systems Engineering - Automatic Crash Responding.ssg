@@ -1,0 +1,28 @@
+/**********
+
+# Automatic Crash Responding
+
+Adapted from:
+Dori, Dov: Model-Based Systems Engineering with OPM and SysML, Springer 2016, ch. 3
+
+OPM is a full blown MBSE language. It brings along it's own ontology that guides the syntax and semantics. Among its constructs are time based triadic relations.
+
+Can MBSL be used to recreate OPM diagrams?
+
+This example is an instructive attempt.
+
+**********/
+
+// 3.2.1
+advisor (handles) automated crash responding.
+possibly injured (is input to) automated crash responding.
+automated crash responding (outputs) being helped.
+being helped ((is an attribute of)) vehicle occupants group.
+possibly injured ((is an attribute of)) vehicle occupants group.
+
+// 3.2.2 - remove "//" below to make visible
+//acr (supports) automated crash responding.
+
+// 3.3 - remove "//" below to make visible
+//acr ((consists of)) vehicle.
+//vehicle occupants group ((occupies)) vehicle.

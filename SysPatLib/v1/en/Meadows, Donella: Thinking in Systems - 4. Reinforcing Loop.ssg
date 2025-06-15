@@ -1,0 +1,28 @@
+/**********
+
+# Runaway Loop, Reinforcing Feedback
+
+Adapted from:
+Meadows, Donella: Thinking in Systems. A Primer, Earthscan 2009, p. 29
+
+For a general overview of how Meadows' Stock-Flow-Diagrams can be translated to MSDL see "Meadows, Donella: Thinking in Systems - 1. Feedback Loops.ssg" in the same folder.
+
+In this model:
+- Stock: bank account holding money (marked blue)
+- Control: feedback loop (marked red as "Reinforcing Loop")
+
+The original valve mechanisms have been reified as process nodes.
+This makes the structure more verbose than Meadows’ diagram, but also more explicit and modular.
+
+Meadows points out that reinforcing loops are behind systems that reproduce itself or grow.
+
+
+**********/
+
+{Reinforcing Feedback – Bank Interest Growth}
+
+bank (pays) interest.
+interest (adds to) bank account balance.
+bank account balance (scales, red) interest.
+interest rate (defines size of, red) interest.
+[bank account balance, blue]

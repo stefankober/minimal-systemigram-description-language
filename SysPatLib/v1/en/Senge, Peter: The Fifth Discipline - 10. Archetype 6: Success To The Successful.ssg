@@ -1,0 +1,26 @@
+/**********
+
+# Archetype 6: Success to the Successful 
+
+Adapted from:
+Senge, Peter: The Fifth Discipline, Currency Doubleday 1990, p. 385
+
+This archetype consists of two reinforcing processes that influence the allocation of limited resources for the better or worse.
+
+As one party (A or B) begins to succeed, it receives more resources, which boosts its performance, further justifying increased allocation. Meanwhile, the other party receives less and begins to fall behind, reinforcing a downward spiral.
+
+This structure often emerges in funding decisions, internal promotions, or educational outcomes. It’s sometimes summed up as “the rich get richer” or "money goes to the money".
+
+If left unchecked, one party will dominate and the other will be effectively starved of opportunity — even if both started with equal potential.
+
+**********/
+
+{Archetype 6: Success to the Successful}
+
+allocation to A instead of B (influences, red) resources to A.
+resources to A (influences, red) success of A.
+success of A (influences, red) allocation to A instead of B.
+
+allocation to A instead of B (influences, red) resources to B.
+resources to B (influences, red) success of B.
+success of B (influences, red) allocation to A instead of B.

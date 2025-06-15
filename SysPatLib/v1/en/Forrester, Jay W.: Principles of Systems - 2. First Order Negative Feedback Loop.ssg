@@ -1,0 +1,27 @@
+/**********
+
+# First-Order Negative Feedback Loop
+
+Adapted from:
+Forrester, Jay W.: Principles of Systems, MIT Press 1968, p. 2-4
+
+The system is first order because it acts only on one variable (that has a level of objects, the inventory).
+
+Forrester asks the reader to imagine that orders can be positive or negative, that objects can be ordered form and returned to the supplier. The goal of this loop is to keep the level of objects in the inventory at a desired level.
+
+He assumes that there is an order rate (OR, in units/week), and that this OR is informed by the inventory (I, in units) and the desired inventory (DI, in units) in the following way: OR = DI - I. Forrester observes that this is not dimensionally correct (because OR is not in units, but in units/week), and one must specify how exactly the order rate depends on the inventory and desired inventory, for which the adjustment time can be used.
+
+**********/
+
+{First-Order Negative Feedback Loop}
+
+order (influences) supply.
+supply (influences) inventory.
+inventory (influences) order.
+
+desired inventory (influences) order.
+adjustment time (influences) order.
+// decision node
+[order]
+
+

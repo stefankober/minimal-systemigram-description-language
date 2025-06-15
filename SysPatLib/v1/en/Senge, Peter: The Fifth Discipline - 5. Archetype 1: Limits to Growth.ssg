@@ -1,0 +1,59 @@
+/**********
+
+# Archetype 1: Limits to Growth
+
+Adapted from:
+Senge, Peter: The Fifth Discipline, Currency Doubleday 1990, p. 97/379
+
+This archetype consists of a reinforcing process that struggles with a balancing process.
+
+See also "Meadows, Donella: Thinking in Systems - 6. One Balancing One Reinforcing Loop.ssg" in this folder.
+
+To read a limits to growth diagram Senge suggests to start with the reinforcing side. That is the initial moment. But the momentum stalls later through the counter actions of the balancing or limiting process, sometimes the momentum is even reversed.
+
+To tackle the resulting problem, Senge points out that people usually try to do more on the growth side, while the real solution lies most often in changes to the balancing process.
+
+Comment on Senge's examples: The second example is actually Senge's first. But it is harder to interpret, as the circles are 1. working in the opposite direction, and 2. the balancing circle appears to be missing one direct edge to be a full circle (from "amount of new products" to "r&d budget"). Indirectly the influence is provided: it is nothing other than the reinforcing loop! It is an interesting example, but the second example is more direct and clear. Hence the order. There are other interesting examples in Senge's section on the limits of growth. Try them yourself.
+
+**********/
+
+{Archetype 1: Limits to Growth}
+
+condition (influences, red) growth condition.
+growth condition (influences, red) condition.
+
+condition (influences, green) slowing action.
+slowing action (influences, green) condition.
+
+limiting condition (provides reference value for) slowing action.
+
+// for two of Senge's examples, comment the description 
+// above, and uncomment one below:
+
+// Example 1:
+/*
+growth (drives, red) promotion opportunities.
+promotion opportunities (boost, red) morale.
+morale (boosts, red) motivation and productivity.
+motivation and productivity (drive, red) growth.
+
+growth (drives WITH DELAY, yellow) market niche saturation.
+market niche saturation (slows, green) growth.
+
+size of market niche (provides reference value for) market niche saturation.
+*/
+
+// Example 2:
+/*
+r&d budget (influences, red) amount of new products.
+amount of new products (drives, red) revenue.
+revenue (adds to, red) r&d budget.
+
+r&d budget (influences, green) size of engineering staff.
+size of engineering staff (raises, green) management complexity.
+management complexity (raises WITH DELAY, yellow) management burden to senior engineers.
+management burden to senior engineers (raises, green) product development time.
+product development time (shrinks, green) amount of new products.
+
+senior engineer's ability to manage (provides reference value for) product development time.
+*/

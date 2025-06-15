@@ -1,0 +1,29 @@
+/**********
+
+# Stabilizing Loop, Balancing Feedback
+
+Adapted from:
+Meadows, Donella: Thinking in Systems. A Primer, Earthscan 2009, p. 27
+
+For a general overview of how Meadows' Stock-Flow-Diagrams can be translated to MSDL see "Meadows, Donella: Thinking in Systems - 1. Feedback Loops.ssg" in the same folder.
+
+In this model:
+- Stocks: "stored energy in body" and "energy available for work" (marked blue)
+- Control: feedback loop (marked green as "Balancing Loop")
+
+The original valve mechanisms have been reified as process nodes.
+This makes the structure more verbose than Meadows’ diagram, but also more explicit and modular.
+
+**********/
+
+{Stabilizing Loop - Coffee Intake}
+
+stored energy in body (is released through) metabolic mobilization of energy.
+metabolic mobilization of energy (provides) energy available for work.
+energy available for work (goes to) energy expenditure.
+energy available for work (is monitored by, green) energy monitor.
+desired energy level (is set in, green) energy monitor.
+energy monitor (on discrepancy adjusts, green) coffee intake.
+coffee intake (adjusts, green) metabolic mobilization of energy.
+[stored energy in body, blue]
+[energy available for work, blue]

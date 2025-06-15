@@ -1,0 +1,30 @@
+/**********
+
+# Archetype 7: Tragedy of the Commons 
+
+Adapted from:
+Senge, Peter: The Fifth Discipline, Currency Doubleday 1990, p. 387
+
+This archetype consists of several, here two reinforcing processes that work on a shared and limited resource.
+
+Since the resource is plenty at the beginning, but gets used up over time this is a win for everybody at the start, but then the gains erode.
+
+This can be counteracted by a regulation mechanism.
+
+**********/
+
+{Archetype 7: Tragedy of the Commons}
+
+total activity (influences WITH DELAY, yellow) gain per individual.
+resources limit (influences) gain per individual.
+
+gain per individual (influences) net gains for A.
+gain per individual (influences) net gains for B.
+
+net gains for A (influences, red) A's activity.
+A's activity (influences, red) net gains for A.
+A's activity (influences) gain per individual.
+
+net gains for B (influences, red) B's activity.
+B's activity (influences, red) net gains for B.
+B's activity (influences) gain per individual.

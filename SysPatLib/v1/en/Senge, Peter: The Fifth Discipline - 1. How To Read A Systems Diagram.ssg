@@ -1,0 +1,23 @@
+/**********
+
+# How To Read Systems Diagrams
+
+Adapted from:
+Senge, Peter: The Fifth Discipline, Currency Doubleday 1990, p. 76
+
+This is a very simple diagram, in which Senge teaches the reader how to read his systems diagrams.
+
+A bit before introducing this diagram he provides a fundamental insight what systems thinking is about:
+"[Sophisticated tools and plans] are all designed to handle the sort of complexity in which there are many variables: detail complexity. But there are two types of complexity. The second type is dynamic complexity, situations where cause and effect are subtle, and where the effects over time of interventions are not obvious." (p. 56)
+
+To understand a system, use your finger to follow the flow and read off the english sentences. Specifically loops or circles are of interest, as they stabilize the system or let it grow and shrink. This is the dynamic complexity that can lead to unforeseen reactions on interventions.
+
+**********/
+
+{How To Read Systems Diagrams}
+
+perceived gap (influences) faucet position.
+faucet position (influences) water flow.
+water flow (influences) current water level.
+current water level (influences) perceived gap.
+desired waterlevel (influences) perceived gap.

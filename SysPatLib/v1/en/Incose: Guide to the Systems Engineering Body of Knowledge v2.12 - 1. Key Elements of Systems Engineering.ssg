@@ -1,0 +1,36 @@
+/**********
+
+# Key Elements of Systems Engineering 
+
+Adapted from:
+Guide to the Systems Engineering Body of Knowledge v2.12 (SEBoK), Incose 2025, p. 40
+
+Using the rules of MSDL, the original edge "development team -implements-> systems engineer" (marked red) in the diagram is not feasible for several reasons. First of all: it is factually wrong. That is why the wording was changed to reflect the probably intended interpretation "implements plan of".
+But that is also not feasible, because it neither changes the systems engineer, nor does it transport an object to him or is an object. Understanding it this way in MSDL would rather demand that plan would be made an explicit node with a structural connection to the systems engineer like "owned by". But also the plan is not changed. The plan is an object delivered to the development team, but we have an edge for that already. That is why the green marked edge was added: development team -implements-> system, and the red edge should be removed.
+
+Two edges to also look at are 
+customer (provides needs to) systems engineer.
+systems engineer (elicits needs of) customer.
+In the first, 'needs' are delivered as documents (requirements specifications, use‐case writeups) to the systems engineer. That is basic MSDL. In the second, the systems engineer 'elicits needs' by sending questionnaires or conducting interviews—i.e. providing questions and gathering responses from the customer. It's not the only possible interpretation. But like this it works.
+
+There is nothing wrong with the SEBoK diagram. It is not written in MSDL.
+But it is a nice illustration what kind of changes MSDL enforces (see Help and Specification).
+
+**********/
+
+{Key Elements of Systems Engineering}
+
+customer (provides needs to) systems engineer.
+systems engineer (elicits needs of) customer.
+
+systems engineer (gives specifications to) development team.
+development team (implements plan of, red) systems engineer.
+development team (implements, green) system.
+
+systems engineer (supports) life cycle processes.
+life cycle processes (result in) system.
+
+system (interacts with) environment.
+environment (interacts with) system.
+
+system (is provided to) customer.

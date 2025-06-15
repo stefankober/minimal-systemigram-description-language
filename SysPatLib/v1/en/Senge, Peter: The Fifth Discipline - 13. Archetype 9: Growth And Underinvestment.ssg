@@ -1,0 +1,24 @@
+/**********
+
+# Archetype 9: Growth and Underinvestment 
+
+Adapted from:
+Senge, Peter: The Fifth Discipline, Currency Doubleday 1990, p. 389
+
+When there is reinforcing circle of growth, investment in capacity needs to be bold, or it risks becoming a drag on growth, and subsequently initiates a downward spiral.
+
+**********/
+
+{Archetype 9: Growth and Underinvestment}
+
+growing action (influences, red) demand.
+demand (influences, red) growing action.
+
+demand (influences, green) performance.
+performance (influences, green) demand.
+
+performance (influences, green) preceived need to invest.
+performance standard (influences) preceived need to invest.
+preceived need to invest (influences, green) investment capacity.
+investment capacity (influences WITH DELAY, yellow) capacity.
+capacity (influences, green) performance. 

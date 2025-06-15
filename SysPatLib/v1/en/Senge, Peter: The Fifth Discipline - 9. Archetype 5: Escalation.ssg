@@ -1,0 +1,36 @@
+/**********
+
+# Archetype 5: Escalation 
+
+Adapted from:
+Senge, Peter: The Fifth Discipline, Currency Doubleday 1990, p. 384
+
+This archetype consists of two balancing processes that influence each other's goals.
+
+Each actor attempts to improve their performance relative to the other. Because both are using the other's results as a benchmark, any improvement by one party prompts a counteraction by the other. The loops are balancing in nature, but the reference points adjust continuously, leading to runaway escalation. That is why these are not escalating loops.
+
+This pattern is common in arms races, price wars, feature competitions, or status signaling. It is driven by comparison, not absolute need.
+
+**********/
+
+{Archetype 5: Escalation}
+
+results of A relative to B (influence, green) activity by A.
+activity by A (influences, green) A's results.
+A's results (influence, green) results of A relative to B.
+
+results of A relative to B (influence, green) activity by B.
+activity by B (influences, green) B's results.
+B's results (influence, green) results of A relative to B.
+
+/*
+// Arms Race Example, completely fictional
+
+A's military power relative to B (influences, green) armament activity by A.
+armament activity by A (influences, green) A's results.
+A's results (influence, green) A's military power relative to B.
+
+A's military power relative to B (influences, green) armament activity by B.
+armament activity by B (influences, green) B's results.
+B's results (influence, green) A's military power relative to B.
+*/

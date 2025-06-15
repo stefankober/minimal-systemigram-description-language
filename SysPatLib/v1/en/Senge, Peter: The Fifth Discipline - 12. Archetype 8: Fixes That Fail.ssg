@@ -1,0 +1,18 @@
+/**********
+
+# Archetype 8: Fixes That Fail 
+
+Adapted from:
+Senge, Peter: The Fifth Discipline, Currency Doubleday 1990, p. 388
+
+This archetype consists of a balancing circle of short term fixes, or quick fixes. And a reinforcing circle that acts with a delay, where you pay for not implementing the real fix.
+
+**********/
+
+{Archetype 8: Fixes That Fail}
+
+problem (influences, green) fix.
+fix (influences, green) problem.
+
+fix (influences WITH DELAY, yellow) unintended consequences.
+unintended consequences (influences, red) problem.

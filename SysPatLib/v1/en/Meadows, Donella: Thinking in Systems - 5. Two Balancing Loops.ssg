@@ -1,0 +1,43 @@
+/**********
+
+# Two Balancing Loops - One Stock System
+
+Adapted from:
+Meadows, Donella: Thinking in Systems. A Primer, Earthscan 2009, p. 36
+
+For a general overview of how Meadows' Stock-Flow-Diagrams can be translated to MSDL see "Meadows, Donella: Thinking in Systems - 1. Feedback Loops.ssg" in the same folder.
+
+In this model:
+- Stock: room temperature (marked blue)
+- Control: two feedback loops with different goals (marked green as "Balancing Loop")
+
+One original valve mechanisms have been partially reified as process nodes.
+This makes the structure more verbose than Meadows’ diagram, but also more explicit and modular.
+
+The point here is to see two goal seeking loops on the same stock that drag the overall system in two directions, and in this case, one "wins".
+
+The original diagram is very high level, and is stated in a way that leaves open different interpretations. 
+
+Important with these kinds of loops is that some of the behaviors introduce a delay, which causes the stock to oscillate or fall short of or overshoot target values. 
+
+Note the adjustment that "heat (flows out of) room temperature." This difference is explained in "Meadows, Donella: Thinking in Systems - 3. Stabilizing Loop.ssg" in this folder.
+
+**********/
+
+{Two B-Loops: Thermostat}
+
+// loop one
+furnace (raises) room temperature.
+room temperature (is measured by, green) thermostat.
+thermostat setting (sets goal for, palegreen) thermostat.
+thermostat (regulates, green) furnace.
+
+// loop two
+heat (flows out of) room temperature. 
+heat (moves to) outside.
+outside (sets goal for, palegreen) nature.
+room temperature (is measured by, green) nature.
+nature (adjusts amount of, green) heat.
+
+// both loops act on
+[room temperature, blue]

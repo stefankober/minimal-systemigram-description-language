@@ -1,0 +1,49 @@
+/**********
+
+# Archetype 2: Shifting the Burden
+
+Adapted from:
+Senge, Peter: The Fifth Discipline, Currency Doubleday 1990, p. 106/380
+
+This archetype consists of two balancing processes and a reinforcing process. The reinforcing process may or may not be present.
+
+Senge puts the delay on the influence from problem symptom to fundamental solution. That may come up, the real solution may be harder to find, because the analysis is hard. But the delay was shifted to the solves-edge in the diagram, where it appears to occur more frequently. This shift seems to be supported by the examples. In the second example, Senge leaves out the delay. It appears valuable to add it still, or even to replace it with "WITH MORE WORK", which is another problem that often hinders going for the real solution.
+
+Senge argues that the only sustainable path forward is to focus on the fundamental solution, because relying on symptomatic solutions tends to create new problems over time. More examples can be found in the respective section in Senge's book.
+
+**********/
+
+{Archetype 2: Shifting the Burden}
+
+symptomatic solution (solves temporarily, green) problem symptom.
+problem symptom (guides search for, green) symptomatic solution.
+
+fundamental solution (solves permanently WITH DELAY, yellow) problem symptom.
+problem symptom (guides search for, green) fundamental solution.
+
+symptomatic solution (drives, red) side effect.
+side effect (makes harder to implement, red) fundamental solution.
+
+// for two of Senge's examples, comment the description 
+// above, and uncomment one below:
+
+// Example 1:
+/*
+bringing in HR expert (solves temporarily, green) personnel performance problem.
+personnel performance problem (inspires, green) bringing in HR expert.
+
+personnel performance problem (inspires, green) developing managers' abilities.
+developing managers' abilities (solves permanently WITH DELAY, yellow) personnel performance problem.
+
+bringing in HR expert (raises, red) expectation that HR experts will solve problem.
+expectation that HR experts will solve problem (lowers interest in, red) developing managers' abilities.
+*/
+
+// Example 2, without reinforcing process:
+/*
+pressure to reduce deficit (inspires to, green) lower goal for deficit reduction.
+lower goal for deficit reduction (solves temporarily, green) pressure to reduce deficit.
+
+pressure to reduce deficit (inspires, green) deficit reduction actions.
+deficit reduction actions (solve permanently WITH DELAY, yellow) pressure to reduce deficit.
+*/

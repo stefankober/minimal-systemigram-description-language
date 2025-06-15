@@ -1,0 +1,27 @@
+/**********
+
+# How To Read A Balancing Cycle
+
+Adapted from:
+Senge, Peter: The Fifth Discipline, Currency Doubleday 1990, p. 87
+
+This is a very simple diagram, in which Senge teaches the reader how to read a balancing cycle.
+
+His diagrams do not carry as much direct visual metaphor as the ones from Meadow. Compare the diagram here to the one on which "Meadows, Donella: Thinking in Systems - 2. Stabilizing Loop.ssg" in this folder is based.
+
+While Meadows uses pipes and valves and separate control circles, Senge uses a plain circle of edges, and in the middle a sketched weighing scale, to indicate **balance**. In both Meadows and Senge this circle has a node with outside interference, where a goal is set. That's why these circles are also called goal-seeking.
+
+Senge points out that "[t]o walk yourself through the process, it's generally easiest to start at the gap—the discrepancy between what is desired and what exists".
+
+His example of a balancing circle is shown below. We chose green edges to mark reinforcement.
+In line with Senge's semantic we kept the word "influences", though we think more specific verbs are preferable where they exist. The one exception is "provides reference value for". We think that without this clarification the diagram becomes hard to read.
+
+**********/
+
+{How To Read A Balancing Cycle}
+
+desired cash balance (provides reference value for) cash surplus [or gap].
+
+cash surplus [or gap] (influences, green) payments [or borrowing].
+payments [or borrowing] (influence, green) cash balance.
+cash balance (influences, green) cash surplus [or gap].

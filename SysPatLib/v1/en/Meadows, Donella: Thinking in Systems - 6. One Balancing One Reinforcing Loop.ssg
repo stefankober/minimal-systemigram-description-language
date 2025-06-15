@@ -1,0 +1,37 @@
+/**********
+
+# One Balancing, One Reinforcing Loop - One Stock System
+
+Adapted from:
+Meadows, Donella: Thinking in Systems. A Primer, Earthscan 2009, p. 42
+
+For a general overview of how Meadows' Stock-Flow-Diagrams can be translated to MSDL see "Meadows, Donella: Thinking in Systems - 1. Feedback Loops.ssg" in the same folder.
+
+In this model:
+- Stock: population size (marked blue)
+- Control: two feedback loops with different goals (marked green/red as "Balancing Loop"/"Reinforcing Loop")
+
+Original valve mechanisms have been reified as process nodes, cloud nodes have been removed.
+
+We have here a goal-seeking loop (loop two) that is stabilizing, and has zero population size as a goal. And we have a reinforcing loop (loop one) that wants to grow - under model conditions - infinitely.
+
+Depending on which is stronger, the population will indeed go to zero, fluctuate, or explode.
+
+Over time there can be, as Meadows points out, **shifting dominance** of the loops, when mortality and/or fertility changes.
+
+**********/
+
+{B-Loops and R-Loop: Population}
+
+// loop one
+births (add to) population size.
+population size (influences number of, red) births.
+fertility (sets proportion of, orangered) births.
+
+// loop two
+deaths (subtract from) population size.
+population size (influences number of, green) deaths.
+mortality (sets proportion of, palegreen) deaths.
+
+// both loops act on
+[population size, blue]

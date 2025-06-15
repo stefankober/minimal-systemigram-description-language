@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Systemigram Editor</title>
+  <script src="./vizjs/viz.js"></script>
+  <script src="./vizjs/full.render.js"></script>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    #toolbar {
+      padding: 0.5em;
+      background: #f0f0f0;
+      display: flex;
+      gap: 0.5em;
+    }
+
+    textarea {
+      width: 50%;
+      height: 100%;
+      padding: 1em;
+      border: none;
+      font-family: monospace;
+      font-size: 1em;
+      resize: none;
+      box-sizing: border-box;
+    }
+
+    #editor {
+      display: flex;
+      flex: 1;
+      min-height: 0; /* allows inner flex children to shrink properly */
+      overflow: hidden; /* prevent unnecessary scrollbars on the container */
+    }
+
+    #diagram {
+      width: 50%;
+      height: 100%;
+      overflow: auto; /* allows both scrollbars to show when needed */
+      padding: 1em;
+      background: #f9f9f9;
+      box-sizing: border-box;
+    }
+
+    #mslHelp {
+      padding: 1em;
+      background: #f5f5f5;
+      border-top: 1px solid #ccc;
+      font-family: sans-serif;
+      line-height: 1.5;
+    }
+
+    #mslHelp pre {
+      background: #eee;
+      padding: 0.5em;
+      white-space: pre-wrap;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div id="toolbar">
+    <input type="file" id="fileInput" accept=".ssg" style="display:none" />
+    <button onclick="newFile()">New .ssg</button>
+    <button onclick="document.getElementById('fileInput').click()">Load .ssg</button>
+    <button onclick="saveDSL()">Save .ssg</button>
+    <button onclick="savePNG()">Save PNG</button>
+    <button onclick="exportGraphviz()">Export Graphviz</button>
+    <button onclick="toggleHelp()">Help</button>
+    <select id="layoutSelector" onchange="setLayout(this.value)">
+      <option value="dot">Dot (safe default)</option>
+      <option value="circo">Circo (clearer layout, but flattens 2-node loops)</option>
+    </select>
+  </div>
+
+  <div id="editor">
+    <textarea id="dslInput">{Oven Subsystem Systemigram}
+oven (produces, red) heat.
+heat (raises) temperature.
+temperature (is checked by, blue) sensor.
+sensor (regulates) oven.
+sensor ((is part of)) wall.
+wall ((contains, gray)) oven.
+[oven]
+[sensor, green]</textarea>
+
+    <div id="diagram">Loading...</div>
+  </div>
+
+  <div id="mslHelp" style="display: none;">
+    <summary><strong>MSL Help — Minimal Systemigram Language</strong></summary>
+    <div style="padding-top: 1em;">
+      <p><strong>MSL</strong> is a minimal language for drawing and reasoning about systemigrams.</p>
+      <p><strong>Syntax:</strong></p>
+      <ul>
+        <li><code>{Title}</code> — the title of the systemigram</li>
+        <li><code>A (verb) B.</code> — behavioral edge from A to B</li>
+        <li><code>A (verb, color) B.</code> — behavioral edge with colored arrow</li>
+        <li><code>A ((verb)) B.</code> — structural (dashed) edge</li>
+        <li><code>A ((verb, color)) B.</code> — structural edge with color</li>
+        <li><code>[Node]</code> — highlights a node (default red)</li>
+        <li><code>[Node, color]</code> — highlights node with given color</li>
+        <li><code>//</code> — single line comment</li>
+        <li><code>/* ... */</code> — multi-line comment</li>
+      </ul>
+      <p>Each statement must end with a period. Node names can include spaces. Color must be a valid Graphviz color (e.g. <code>red</code>, <code>gray</code>, <code>blue</code>).</p>
+      <p><strong>Semantic conventions:</strong><br>
+      A (verb describing change) B. This is understood as:<br>
+      A influences B’s change. A itself remains in this interaction relatively unchanged, while B undergoes the interesting transformation. The verb can be in active or passive voice depending on the direction of the change and the verb used. Compare "sensor (activates) alarm" to "environment (is scanned by) scanner". In the later case the scanner's state is changed, while the environment is unchanged.
+      <br>
+      A (outputs an object to) B. A (is input into) B. This is understood as:<br>
+      A inputs something, that is then changed in B, probably output again. The changed object does not have to be an explicit node anywhere. It can be only tracked through stations that change it. Or the object is modeled explicitly, A is an input to B, that is then used or changed in B. A is then often produced by some upstream node.
+      <br>
+      Behavioral edges stand for classes of behavior. <strong>Instances</strong> of behavioral edges take time, and run one after the other. They can run in the background in multiple instances while you inspect one of them, or even continuously.
+      <br>
+      A ((verb describing connection)) B. This is understood as:
+      <br>
+      A is connected to B, and this connection does not change.<br>
+      Examples are A is part of B, A owns B, A hosts B.<br>
+      If you want to cross reference different ssg files, because you put the details in another diagram, structural links are the way to go. The filename can't be directly referenced, because of the dot, so this schema is used:<br>
+      oven ((implemented by)) OvenSubsystem. This means that the oven node's details are explained in the diagram with title OvenSubsystem or file name OvenSubsystem.ssg. It's best practice that filename and title match.<br>
+      OvenSubsystem ((is referenced in)) KitchenSystem. This is in turn put into OvenSubsystem.ssg to make clear that the content is referenced by a node in KitchenSystem.ssg.
+      <br>
+      Colors are used to point something out to the reader. Their semantic can be set by the modeler, or they can simply be used to highlight portions of the diagram.
+      <br>
+      These simple restrictions make structured systemigrams (SSGs) readable on their own, while retaining much of the simplicity and expressive power of the original systemigrams. Systemigrams were devised by John Boardman and Brian Sauser in the 1990s and published in 2013 in their book <em>Systemic Thinking: Building Maps for Worlds of Systems</em>. However, the original systemigrams do not use a formalized syntax or semantics. Instead, they rely on heuristics and a practice called the SystemiShow, in which the creator walks stakeholders through the diagram, explaining it piece by piece to make its meaning clear.
+      </p>
+      <p><strong>Usage:</strong><br>
+      Start with a description of the behavior of a part of the system. Change the description, until you have only behavioral relations between two nodes. Rewrite in MSL. This is the thread to unravel the system. Now methodically ask: What happens before? What happens afterwards? What happens in parallel?
+      <br>
+      If you are interested in the structure of a system as opposed to the behavior, ask "What is this node in relation to a specific other node?". It may be a part, a host, an owner.
+      </p>
+      <p><strong>The goal:</strong><br>
+      It is not necessary to find the true depiction of a system. We need to find an agreeable, communicatable, illuminating and actionable one.
+      </p>
+      <p><strong>What to look for:</strong><br>
+      Repeated or circular dependencies reveal loops. Loops can reinforce, balance and create non-obvious global behavior, especially when they interact.<br>
+      Nodes can accumulate counts or measures of a certain object called the node's stock. Stocks come from outside of the system or from other nodes, they may be used by or disappear in other nodes. Predicting stock change is an interesting problem, specifically when the inflow and/or outflow is governed by feedback loops.
+      </p>
+      <p><strong>Attribution and Licensing:</strong><br>
+      This editor and the Minimal Systemigram Language (MSL) are developed and maintained by Stefan Kober.<br>
+      Application code not covered by the projects mentioned below (c) Stefan Kober, MIT license.<br>
+      MSL specification (c) Stefan Kober, Apache 2.0 license.<br>
+The diagram rendering is powered by the open-source <a href="https://github.com/mdaines/viz.js" target="_blank">Viz.js</a> project, which provides a WebAssembly port of Graphviz.<br> Viz.js Copyright (c) Michael Daines, MIT license. 
+      </p>
+      <p><strong>Advanced Layout and Styling:</strong><br>
+The goal of MSL is to avoid unnecessary complexity and provide just enough syntax to model and communicate system behavior effectively.<br>
+      However, if you need fine-grained control over layout, labeling, or stylistic details, you can export your diagram as Graphviz DOT format.<br>
+      Then continue working directly with <a href="https://graphviz.org" target="_blank">Graphviz</a>, which supports powerful features such as subgraphs, clusters, styles, and advanced rendering options beyond MSL’s minimal core.
+</p>
+    </div>
+  </div>
+
+  <script>
+    const input = document.getElementById("dslInput");
+    const output = document.getElementById("diagram");
+    const fileInput = document.getElementById("fileInput");
+    const mem = 256 * 1024 ** 2;
+    let viz = new Viz({ totalMemory: mem });
+
+    let renderCount = 0;
+    const MAX_RENDERS = 30;
+
+    let currentLayout = 'dot';
+
+    function setLayout(layout) {
+      currentLayout = layout;
+      updateDiagram();
+    }
+
+    function resetViz() {
+      viz = new Viz({ totalMemory: mem });
+      renderCount = 0;
+      console.log("Viz.js engine reset to prevent memory exhaustion.");
+    }
+
+    function toggleHelp() {
+      const help = document.getElementById("mslHelp");
+      help.style.display = help.style.display === "none" ? "block" : "none";
+    }
+
+    function dslToDot(dsl) {
+      const lines = dsl.trim().split(/\n+/);
+      let title = null;
+      const dotLines = [];
+      const transformers = [];
+
+      let inMultilineComment = false;
+      const cleanedLines = [];
+
+      // Scan all lines to extract title and strip comments
+      for (const lineRaw of lines) {
+        const line = lineRaw.trim();
+
+    if (line.includes("/*")) {
+      inMultilineComment = true;
+    }
+    if (inMultilineComment) {
+      if (line.includes("*/")) {
+        inMultilineComment = false;
+      }
+      continue;
+    }
+    if (line.startsWith('//')) continue;
+
+        if (!title) {
+          const titleMatch = line.match(/^\{(.+)\}$/);
+          if (titleMatch) {
+            title = sanitize(titleMatch[1].trim());
+            continue;
+          }
+        }
+
+        cleanedLines.push(line);
+      }
+
+      dotLines.push('digraph G {');
+      if (title) {
+        dotLines.push(`  label="${title}";`);
+        dotLines.push('  labelloc=top;');
+        dotLines.push('  fontsize=20;');
+      }
+
+      for (const line of cleanedLines) {
+        const nodeDecl = line.match(/^\[(.+?)(?:,\s*(\w+))?\]$/);
+        if (nodeDecl) {
+          const node = sanitize(nodeDecl[1].trim());
+          const color = nodeDecl[2] ? nodeDecl[2].trim() : "red";
+          transformers.push({ node, color });
+          continue;
+        }
+
+        const structural = line.match(/^([^()]+)\(\(\s*([^,)]+?)\s*(?:,\s*(\w+))?\s*\)\)([^.]+)\.?$/);
+        if (structural) {
+          const from = sanitize(structural[1].trim());
+          const label = sanitize(structural[2].trim());
+          const color = structural[3] ? structural[3].trim() : null;
+          const to = sanitize(structural[4].trim());
+          const styleAttr = `style=dashed`;
+          const colorAttr = color ? `, color="${color}"` : "";
+          dotLines.push(`  "${from}" -> "${to}" [label="${label}", ${styleAttr}${colorAttr}];`);
+          continue;
+        }
+
+        const behavioral = line.match(/^([^()]+)\(\s*([^,)]+?)\s*(?:,\s*(\w+))?\s*\)([^.]+)\.?$/);
+        if (behavioral) {
+          const from = sanitize(behavioral[1].trim());
+          const label = sanitize(behavioral[2].trim());
+          const color = behavioral[3] ? behavioral[3].trim() : null;
+          const to = sanitize(behavioral[4].trim());
+          const colorAttr = color ? `, color="${color}"` : "";
+          dotLines.push(`  "${from}" -> "${to}" [label="${label}"${colorAttr}];`);
+        }
+      }
+
+      for (const { node, color } of transformers) {
+        dotLines.push(`  "${node}" [color="${color}"];`);
+      }
+
+      dotLines.push("}");
+      return dotLines.join("\n");
+    }
+
+
+    function updateDiagram() {
+      if (renderCount >= MAX_RENDERS) {
+        resetViz();
+      }
+
+      const dot = dslToDot(input.value);
+      viz.renderSVGElement(dot, { engine: currentLayout })
+        .then(svg => {
+          output.innerHTML = '';
+          output.appendChild(svg);
+          renderCount++;
+        })
+        .catch(err => {
+          output.innerHTML = `<pre style="color: red;">${err}</pre>`;
+        });
+    }
+
+    function newFile() {
+      input.focus();
+      input.select();
+
+      document.execCommand("delete");
+
+      output.innerHTML = "";
+
+      updateDiagram();
+    }
+
+    function saveDSL() {
+      const content = input.value;
+      const blob = new Blob([content], { type: "text/plain" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "diagram.ssg";
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }
+
+    function savePNG() {
+      const svg = output.querySelector("svg");
+      if (!svg) return alert("Diagram not available yet.");
+      const svgData = new XMLSerializer().serializeToString(svg);
+      const blob = new Blob([svgData], { type: "image/svg+xml" });
+      const url = URL.createObjectURL(blob);
+      const img = new Image();
+      img.onload = function () {
+        const canvas = document.createElement("canvas");
+        canvas.width = img.width;
+        canvas.height = img.height;
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0);
+        URL.revokeObjectURL(url);
+        canvas.toBlob(blob => {
+          const a = document.createElement("a");
+          a.href = URL.createObjectURL(blob);
+          a.download = "diagram.png";
+          a.click();
+        }, "image/png");
+      };
+      img.src = url;
+    }
+
+    function exportGraphviz() {
+      const dot = dslToDot(input.value);
+      const blob = new Blob([dot], { type: "text/plain" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "diagram.dot";
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }
+
+    function sanitize(text) {
+      return text
+        .replace(/["\\]/g, '')      
+        .replace(/[\x00-\x1F]/g, ''); 
+    }
+
+    fileInput.addEventListener("change", function () {
+      const file = fileInput.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        input.value = e.target.result;
+        updateDiagram();
+      };
+      reader.readAsText(file);
+    });
+
+    document.addEventListener('keydown', function(e) {
+      const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+      const ctrlOrCmd = isMac ? e.metaKey : e.ctrlKey;
+
+      if (!ctrlOrCmd || e.altKey) return;
+
+      switch (e.key.toLowerCase()) {
+        case 's':
+          e.preventDefault();
+          saveDSL();
+          break;
+        case 'o':
+          e.preventDefault();
+          document.getElementById('fileInput').click();
+          break;
+      }
+    });
+
+    input.addEventListener("input", updateDiagram);
+    updateDiagram();
+  </script>
+</body>
+</html>

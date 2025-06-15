@@ -1,0 +1,48 @@
+/**********
+
+# Delay - Two Stock Systems
+
+Adapted from:
+Meadows, Donella: Thinking in Systems. A Primer, Earthscan 2009, p. 60
+
+For a general overview of how Meadows' Stock-Flow-Diagrams can be translated to MSDL see "Meadows, Donella: Thinking in Systems - 1. Feedback Loops.ssg" in the same folder.
+
+In this model:
+- Stock: capital and non-renewable ressource (marked blue)
+- Control: three feedback loops (two "Balancing Loops", one "Reinforcing Loop")
+
+Original valve mechanisms have been reified as process nodes, cloud nodes have been removed.
+
+So far the growth of the one-stock systems was not constrained. The furnace in "Meadows, Donella: Thinking in Systems - 5. Two Balancing Loops.ssg" didn't need oil. But "no real physical system can grow forever" (p. 59).
+
+This diagram is more complex than the diagrams before. While Meadows' diagram shines through the visual metaphor with valves, it is hardly understandable without the accompanying text. The MSDL diagram on the other hand lacks this immediate metaphor, but can be understood by following the edges and their loops with the finger and reading off english sentences.
+
+Note the adjustment that "depreciation (devalues) capital." This difference is explained in "Meadows, Donella: Thinking in Systems - 3. Stabilizing Loop.ssg" in this folder.
+
+**********/
+
+{Two Stock Systems: limits-to-growth archetype}
+
+// first loop, goal: capital = 0
+depreciation (devalues) capital. 
+capital lifetime (sets, palegreen) depreciation.
+capital (influences, green) depreciation.
+
+// second loop: capital growth
+capital (creates, red) profit.
+profit (is put into, red) investment.
+growth (is goal for, orangered) investment.
+investment (adds to) capital
+
+// third loop, goal: non-renewable resource = 0
+extraction (reduces) non-renewable resource.
+capital (helps, green) extraction
+non-renewable resource (influences) yield per unit capital.
+yield per unit capital (influences, green) price.
+yield per unit capital (influences, green) extraction.
+price (influences, green) profit.
+extraction (yields, green) profit.
+
+// the loops act on
+[capital, blue]
+[non-renewable resource, blue]

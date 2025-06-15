@@ -1,0 +1,43 @@
+/**********
+
+# Feedback Loops
+
+Adapted from:
+Meadows, Donella: Thinking in Systems. A Primer, Earthscan 2009, p. 26
+
+This example shows the basic feedback loops as modeled by Donella Meadows.
+In Meadows' notation (stock-and-flow-models) you can point an edge at an edge. That makes sense, because her focus is on the rate of change of stocks. Stock consists of objects of a kind (trees, money) that can accumulate inside a node (the stock-node), and are sent through inflows and outflows. She visually models the flow control as a valve on a pipe that can be opened and closed, and the control edge points to that valve.
+It is not possible in MSDL to point edges to edges.
+There are several possibilites to model this though.
+
+Meadows does not model the object that is in stock explicitly.
+
+Thus most faithful is probably to distiguish 3 cases:
+- the node regulates inflow by sending information to the prior node
+- the node regulates inflow by regulating itself to not take in more stock
+- the node regulates outflow by regulating itself to send no more stock
+
+P. 18, fig. 2 seems to gives license to do that, as there is always an upper node where the flow starts.
+
+The control flow has been colored red, to distinguish it clearly from the object flow.
+
+Other valid approaches (not shown here) include:
+- Modeling the valve as its own node
+- Modeling the pipe explicitly as a node and attaching control to it
+- Modeling the control mechanism in more technical detail
+
+All of these have legitimate use cases, where they will enhance understanding.
+But here we focus on simplicity, as Meadows did.
+
+**********/
+
+{Feedback Loops}
+
+prior node (sends stock) node.
+node (regulates inflow, red) prior node.
+
+prior node 2 (sends stock) node 2.
+node 2 (regulates inflow, red) node 2.
+
+node 3 (sends stock) later node.
+node 3 (regulates outflow, red) node 3.

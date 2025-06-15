@@ -1,0 +1,32 @@
+/**********
+
+# How To Read A Delay
+
+Adapted from:
+Senge, Peter: The Fifth Discipline, Currency Doubleday 1990, p. 90
+
+This is a very simple diagram, in which Senge teaches the reader how to read a delay.
+
+His diagrams do not carry as much direct visual metaphor as the ones from Meadow. Compare the diagram here to the one on which "Meadows, Donella: Thinking in Systems - 2. Stabilizing Loop.ssg" in this folder is based.
+
+While Meadows uses pipes and valves and separate control circles, Senge uses a plain circle of edges, and "Delay" written across an edge to mark a **delay**. 
+
+He points out that minimization of delay is often the highest leverage point to improve system performance.
+
+His example of a balancing circle is shown below. We chose green edges to mark reinforcement.
+In line with Senge's semantic we kept the word "influences", though we think more specific verbs are preferable where they exist. The one exception is "provides reference value for". We think that without this clarification the diagram becomes hard to read.
+
+There are several way to mark a gap. The first one is to use a yellow edge as a color marker. Or mark it verbally using "DELAY" (comment the yellow edge, uncomment the other one!).
+
+The example is brilliant, there is probably nobody on this planet that has not made a bad experience with the delay between changing the shower tap setting and the actual temperature change. Adjust in one direction - adjust a bit back - adjust again - and a bit back again... 
+
+**********/
+
+{How To Read A Delay In A Balancing Cycle}
+
+desired water temperature (provides reference value for) temperature gap.
+
+temperature gap (influences, green) shower tap setting.
+shower tap setting (influences, yellow) current water temperature.
+// shower tap setting (influences with DELAY) current water temperature.
+current water temperature (influences, green) temperature gap.

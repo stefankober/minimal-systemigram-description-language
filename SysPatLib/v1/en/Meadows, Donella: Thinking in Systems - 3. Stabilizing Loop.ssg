@@ -1,0 +1,35 @@
+/**********
+
+# Stabilizing Loop, Balancing Feedback
+
+Adapted from:
+Meadows, Donella: Thinking in Systems. A Primer, Earthscan 2009, p. 29
+
+For a general overview of how Meadows' Stock-Flow-Diagrams can be translated to MSDL see "Meadows, Donella: Thinking in Systems - 1. Feedback Loops.ssg" in the same folder.
+
+In this model:
+- Stock: "coffee" holding heat (marked blue)
+- Control: feedback loop (marked green as "Balancing Loop")
+
+The original valve mechanisms have been reified as process nodes.
+This makes the structure more verbose than Meadows’ diagram, but also more explicit and modular.
+
+A key difference is that cooling points to coffee temperature. In Meadows' diagram the stock "heat" flows out through a valve into a sink. In MSDL the cooling process acts on the coffee, the coffee (temperature) is primarily changed, and thus the edge should point to the coffee. A more faithful model is possible, with "coffee temperature (flows in) heat valve." The chosen framing has the advantage that the loop can be followed by the eye or the finger.
+
+Meadows points out that balancing loops are goal seeking or stability seeking (ibid).
+
+This systemigram is a good example of Meadows' approach: the diagrams are not precise mechanical models, but **tools for understanding** rates of change. They offer simplification and analogy rather than full causal fidelity. 
+
+In reality, no control mechanism actively measures coffee and room temperature to set a cooling rate. But this structure allows us to *classify and reason about* the system’s behavior using systems thinking. Meadows often appears to be about intuition building over faithful detailed representation.
+
+
+**********/
+
+{Stabilizing Loop - Coffee Cooling}
+
+cooling (lowers) coffee temperature.
+cooling (dissipates heat to) surrounding.
+coffee temperature (is measured by, green) control mechanism.
+room temperature (is measured by, green) control mechanism.
+control mechanism (sets rate of, green) cooling.
+[coffee temperature, blue]

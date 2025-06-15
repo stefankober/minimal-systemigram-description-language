@@ -1,0 +1,87 @@
+/**********
+
+Understanding how a security scanner works that scans you network for vulnerabilities.
+
+**********/
+
+{Security Scanner Systemigram}
+
+// Step 1: Start somewhere obvious.
+
+
+scanner (scans) environment.
+
+
+// Step 2: recognize, that the scanner is the thing that changes. 
+// Comment the step before, and uncomment this step.
+
+/*
+environment (is scanned by) scanner.
+*/
+
+// Step 3: What happens afterwards?
+// Comment the step before, and uncomment this step.
+
+/*
+environment (is scanned by) scanner.
+scanner (creates) vulnerability list.
+*/
+
+// Step 4: And then?
+// Comment the step before, and uncomment this step.
+
+/*
+environment (is scanned by) scanner.
+scanner (creates) vulnerability list.
+vulnerability list (informs) ticket creation.
+ticket creation (outputs) tickets.
+tickets (inform) fix implementation.
+fix implementation (updates) environment.
+*/
+
+// Step 5: We closed the circle. But what do we want to point out?
+// In this case, what causes the circle to not work correctly?
+// Comment the step before, and uncomment this step.
+
+/*
+environment (is scanned by) scanner.
+scanner (creates) vulnerability list.
+vulnerability list (informs) ticket creation.
+ticket creation (outputs) tickets.
+tickets (inform) fix implementation.
+
+fix implementation (updates, red) environment.
+fix implementation ((is owned by)) dev team.
+*/
+
+// Here is the delay (red), and the owner.
+// Playing with numbers and going round its easy to see, that
+// if you put out on average 2 tickets, but dev teams do only
+// one, this is going to be a disaster. 
+// First round: 2, 1 done, 1 remains
+// Second round: 2, 1 done, 2 remain
+// Third round: 2, 1 done, 3 remain
+// The number of open vulnerabilities constantly rises.
+// Either the company puts enough resources on the problem, or it
+// will be a self created hamster wheel of pain.
+
+// Step 6: What else could you look at? That depends on your interest,
+// but maybe what else is needed to operate a scanner correctly?
+// Comment the step before, and uncomment this step.
+
+/*
+environment (is scanned by) scanner.
+scanner (creates) vulnerability list.
+vulnerability list (informs) ticket creation.
+ticket creation (outputs) tickets.
+tickets (inform) fix implementation.
+
+fix implementation (updates, red) environment.
+fix implementation ((is owned by)) dev team.
+
+up to date malware information (helps) scanner.
+up to date asset list (informs) scanner.
+*/
+
+// A system is connected to lots of other systems.
+// Plenty to discover. Have fun!

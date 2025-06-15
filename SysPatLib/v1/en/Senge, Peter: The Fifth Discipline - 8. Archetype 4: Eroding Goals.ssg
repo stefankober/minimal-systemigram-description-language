@@ -1,0 +1,47 @@
+/**********
+
+# Archetype 4: Eroding Goals
+
+Adapted from:
+Senge, Peter: The Fifth Discipline, Currency Doubleday 1990, p. 383
+
+This archetype consists of two balancing process.
+
+When there's a gap between the current state and the goal, you can either improve reality or lower the goal. Improving reality takes effort and time.
+Guess which one happens more often?
+
+**********/
+
+{Archetype 4: Eroding Goals}
+
+// "bad circle"
+goal (influences, green) gap.
+gap (influences, green) pressure to adjust goal.
+pressure to adjust goal (influences, green) goal
+
+// "good, but delayed circle"
+gap (influences, green) actions to improve conditions.
+actions to improve conditions (influences WITH DELAY, yellow) condition.
+condition (influences, green) gap. 
+
+
+// Example: Justified Eroding Goals
+/*
+// Base loops
+goal (influences, green) gap.
+gap (influences, green) pressure to adjust goal.
+pressure to adjust goal (influences, green) goal.
+
+gap (influences, green) corrective effort.
+corrective effort (improves WITH DELAY, yellow) actual performance.
+actual performance (influences, green) gap.
+
+// Justification
+
+management (starts) changing year plan.
+changing year plan (results in) adding goals.
+adding goals (justifies) pressure to adjust goal.
+
+[goal, blue]
+[actual performance, blue]
+*/

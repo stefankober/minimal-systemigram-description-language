@@ -1,0 +1,48 @@
+/**********
+
+# Delay - One Stock System
+
+Adapted from:
+Meadows, Donella: Thinking in Systems. A Primer, Earthscan 2009, p. 51
+
+For a general overview of how Meadows' Stock-Flow-Diagrams can be translated to MSDL see "Meadows, Donella: Thinking in Systems - 1. Feedback Loops.ssg" in the same folder.
+
+In this model:
+- Stock: car inventory (marked blue)
+- Control: two feedback loops ("Balancing Loops")
+
+Original valve mechanisms have been reified as process nodes, cloud nodes have been removed.
+
+Note the adjustment that "sales (subtract from) inventory of cars." This difference is explained in "Meadows, Donella: Thinking in Systems - 3. Stabilizing Loop.ssg" in this folder.
+
+On p. 53 several delays are pointed out (here marked red, but commented).
+Delays cause oscillations, and obvious ideas how to fix it (like acting faster on car dealer side) can make things worse (p. 53ff). What helps instead is **increasing** the delay (p. 57). A brilliant show of systems thinking! 
+
+The diagrams and conclusions are based on simulations described at the end of the "Appendix", in a section titled "Model Equations" (p. 195). This section provides pseudo-code and parameter values for simulating this system, and give a bit more background.
+
+**********/
+
+{B-Loop and B-Loop, Delay: Car Dealer}
+
+// loop one
+deliveries (add to) inventory of cars.
+orders to factory (influence, green) deliveries.
+inventory of cars (informs, green) discrepancy.
+discrepancy (informs, green) orders to factory.
+sales (inform, green) perceived sales.
+perceived sales (inform, green) desired inventory.
+desired inventory (informs, green) discrepancy.
+perceived sales (inform, green) orders to factory.
+
+// loop two
+inventory of cars (influences number of, green) sales.
+sales (subtract from) inventory of cars.
+customer demand (influences, palegreen) sales.
+
+// both loops act on
+[inventory of cars, blue]
+
+// delays, remove "//" below to see in systemigram
+//delivery delay (influences, red) deliveries.
+//response delay (influences, red) orders to factory.
+//perception delay (influences, red) perceived sales.
