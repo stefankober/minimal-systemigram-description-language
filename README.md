@@ -136,6 +136,8 @@ The editor size is tiny (<10MB), 256MB vs. 2GB refers only to the largest memory
 
 [msdl-html-editor-2GB.zip](https://github.com/stefankober/minimal-systemigram-description-language/releases/download/v0.1.0/msdl-html-editor-2GB.zip) (514 KB)
 
+Unzip, open index.html in the browser.
+
 ### Linux - build on Ubuntu
 
 The included Linux binary is compiled for Ubuntu 20.04+ and depends on GTK 3 and WebKit2GTK. Other Linux distributions (e.g., CentOS, Arch, older Ubuntus) may lack the necessary libraries or compatible versions. In such cases, please build from source.
