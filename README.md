@@ -32,7 +32,7 @@ Try the editor here: [Systemigram Editor](https://stefankober.github.io/minimal-
 
 The help page will give you a good overview of what this project is about.
 
-From here you can jump to 
+From here you can jump to:
 
 [Download Section](#local-apps)
 
