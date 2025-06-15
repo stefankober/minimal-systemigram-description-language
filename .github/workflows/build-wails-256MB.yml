@@ -1,0 +1,51 @@
+name: Build Wails App
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.21'
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install Wails CLI
+        run: go install github.com/wailsapp/wails/v2/cmd/wails@latest
+
+      - name: Add Go bin to PATH
+        run: echo "${{ runner.temp }}/go/bin" >> $GITHUB_PATH
+        shell: bash
+
+      - name: Install frontend dependencies
+        run: npm install
+        working-directory: ./msdl-wails-editor-256MB
+
+      - name: Build app
+        run: wails build -platform all
+        working-directory: ./msdl-wails-editor-256MB
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: wails-app-${{ matrix.os }}
+          path: |
+            ./msdl-wails-editor-256MB/build/bin
