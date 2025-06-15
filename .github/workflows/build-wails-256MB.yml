@@ -35,10 +35,6 @@ jobs:
         run: echo "${{ runner.temp }}/go/bin" >> $GITHUB_PATH
         shell: bash
 
-      - name: Install frontend dependencies
-        run: npm install
-        working-directory: ./msdl-wails-editor-256MB
-
       - name: Build app
         run: wails build -platform all
         working-directory: ./msdl-wails-editor-256MB
