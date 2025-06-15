@@ -13,8 +13,6 @@ jobs:
     strategy:
       matrix:
         include:
-          - os: ubuntu-20.04
-            platform: linux/amd64
           - os: macos-latest
             platform: darwin/universal
           - os: windows-latest
@@ -34,19 +32,6 @@ jobs:
 
       - name: Add Go bin to PATH
         run: echo "${{ runner.temp }}/go/bin" >> $GITHUB_PATH
-
-      - name: Install Linux GUI dependencies
-        if: matrix.os == 'ubuntu-20.04'
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            libgtk-3-dev \
-            libwebkit2gtk-4.0-dev \
-            libglib2.0-dev \
-            libgdk-pixbuf2.0-dev \
-            libgio2.0-dev \
-            libcairo2-dev \
-            libpango1.0-dev
 
       - name: Build app
         run: wails build -platform ${{ matrix.platform }}
@@ -68,10 +53,3 @@ jobs:
         with:
           name: systemigram-editor-darwin
           path: msdl-wails-editor-256MB/build/darwin/
-
-      - name: Upload Linux binary
-        if: matrix.os == 'ubuntu-20.04'
-        uses: actions/upload-artifact@v4
-        with:
-          name: systemigram-editor-linux
-          path: msdl-wails-editor-256MB/build/bin/
