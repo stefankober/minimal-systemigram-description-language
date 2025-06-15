@@ -120,9 +120,25 @@ On the left side an example of MSDL from the SysPatLib, on the left side the gen
 
 Systemigram rendered with circo, which is clearer, but flattens two-node-loops. That's why it has not been made default in the first version of the editor.
 
+# A GitHub Page is Worth Even More Than a Thousand words
+
+Try the editor here: [Systemigram Editor](https://stefankober.github.io/minimal-systemigram-description-language/)
+
+# How to Use
+
+There are Wails Desktop apps for Linux, Mac and Windows.
+
+(To be linked after setting up GitHub runners)
+
+There is the GitHub page mentioned above.
+
+Or you just download one of the folders msdl-html-editor-256MB (normal use) or msdl-html-editor-2GB (very large diagrams) to your machine, and open index.html in your browser.
+
 # Repo Structure, Dependencies and Licensing
 
 ## Repo Structure
+
+docs/ - abused for GitHub page
 
 images/ - images used in README.md
 
