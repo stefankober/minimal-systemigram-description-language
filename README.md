@@ -134,19 +134,21 @@ Or you just download one of the folders msdl-html-editor-256MB (normal use) or m
 
 ### Wails apps:
 
-Windows:
+#### Windows:
 
 [Wails Editor 256MB](https://github.com/stefankober/minimal-systemigram-description-language/actions/runs/15664157917/artifacts/3331106935)
 
 The editor size is tiny, 256MB vs. 2GB refers only to the largest memory size of the diagrams.
 
-Mac: 
+#### Mac:
 
 [Wails Editor 256MB](https://github.com/stefankober/minimal-systemigram-description-language/actions/runs/15664157917/artifacts/3331105681)
 
 The editor size is tiny, 256MB vs. 2GB refers only to the largest memory size of the diagrams.
 
-Linux, build on Ubuntu:
+You may need to use `xattr -dr com.apple.quarantine ~/path/to/Contents/MacOS/systemigram-editor.app` to be able to start it via double click.
+
+#### Linux, build on Ubuntu:
 
 [Wails Editor 256MB](https://github.com/stefankober/minimal-systemigram-description-language/raw/refs/heads/master/msdl-wails-editor-256MB/build/bin/systemigram-editor)
 

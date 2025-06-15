@@ -13,8 +13,6 @@ jobs:
     strategy:
       matrix:
         include:
-          - os: 
-            platform: linux/amd64
           - os: macos-latest
             platform: darwin/universal
           - os: windows-latest
@@ -39,14 +37,13 @@ jobs:
 
       - name: Add Go bin to PATH
         run: echo "${{ runner.temp }}/go/bin" >> $GITHUB_PATH
-        shell: bash
 
       - name: Build app
         run: wails build -platform ${{ matrix.platform }}
-        working-directory: ./msdl-wails-editor-2GB
+        working-directory: ./msdl-wails-editor-256MB
 
       - name: List build output
-        run: find ./msdl-wails-editor-2GB/build -type f || true
+        run: find ./msdl-wails-editor-256MB/build -type f || true
 
       - name: Upload Windows binary
         if: matrix.os == 'windows-latest'
@@ -60,4 +57,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: systemigram-editor-darwin
-          path: msdl-wails-editor-2GB/build/darwin/
+          path: msdl-wails-editor-256MB/build/bin/systemigram-editor.app/**
