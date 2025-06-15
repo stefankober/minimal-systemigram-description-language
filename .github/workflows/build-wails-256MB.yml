@@ -50,11 +50,11 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: systemigram-editor-windows
-          path: msdl-wails-editor-256MB/build/windows/
+          path: msdl-wails-editor-256MB/build/bin/systemigram-editor.exe
 
       - name: Upload macOS binary
         if: matrix.os == 'macos-latest'
         uses: actions/upload-artifact@v4
         with:
           name: systemigram-editor-darwin
-          path: msdl-wails-editor-256MB/build/darwin/
+          path: msdl-wails-editor-256MB/build/bin/systemigram-editor.app/**
