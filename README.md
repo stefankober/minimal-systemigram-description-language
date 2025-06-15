@@ -124,37 +124,39 @@ Systemigram rendered with circo, which is clearer, but flattens two-node-loops. 
 
 Try the editor here: [Systemigram Editor](https://stefankober.github.io/minimal-systemigram-description-language/)
 
-# How to Use
+# Local Apps
 
-### Browser-editor:
+For all options check out **[Release MSDL v0.1.0 – Initial Public Release](https://github.com/stefankober/minimal-systemigram-description-language/releases/tag/v0.1.0)**
 
-There is the GitHub page mentioned above.
+The editor size is tiny (<10MB), 256MB vs. 2GB refers only to the largest memory size of the diagrams. If you are not planning on exceptionally large diagrams 256MB is the best choice.
 
-Or you just download one of the folders msdl-html-editor-256MB (normal use) or msdl-html-editor-2GB (very large diagrams) to your machine, and open index.html in your browser. Their size is tiny, 256MB vs. 2GB refers only to the largest memory size of the diagrams.
+### HTML editors. Operating system independent:
 
-### Wails apps:
+[msdl-html-editor-256MB.zip](https://github.com/stefankober/minimal-systemigram-description-language/releases/download/v0.1.0/msdl-html-editor-256MB.zip) (514 KB)
 
-#### Windows:
+[msdl-html-editor-2GB.zip](https://github.com/stefankober/minimal-systemigram-description-language/releases/download/v0.1.0/msdl-html-editor-2GB.zip) (514 KB)
 
-[Wails Editor 256MB](https://github.com/stefankober/minimal-systemigram-description-language/actions/runs/15664157917/artifacts/3331106935)
+### Linux - build on Ubuntu
 
-The editor size is tiny, 256MB vs. 2GB refers only to the largest memory size of the diagrams.
+The included Linux binary is compiled for Ubuntu 20.04+ and depends on GTK 3 and WebKit2GTK. Other Linux distributions (e.g., CentOS, Arch, older Ubuntus) may lack the necessary libraries or compatible versions. In such cases, please build from source.
 
-#### Mac:
+[systemigram-editor-256MB-Ubuntu.zip](https://github.com/stefankober/minimal-systemigram-description-language/releases/download/v0.1.0/systemigram-editor-256MB-Ubuntu.zip) (3.66MB)
 
-[Wails Editor 256MB](https://github.com/stefankober/minimal-systemigram-description-language/actions/runs/15664157917/artifacts/3331105681)
+[systemigram-editor-2GB-Ubuntu.zip](https://github.com/stefankober/minimal-systemigram-description-language/releases/download/v0.1.0/systemigram-editor-2GB-Ubuntu.zip) (3.66MB)
 
-The editor size is tiny, 256MB vs. 2GB refers only to the largest memory size of the diagrams.
+### Mac
 
-You may need to use `xattr -dr com.apple.quarantine ~/path/to/Contents/MacOS/systemigram-editor.app` to be able to start it via double click.
+[systemigram-editor-256MB-darwin.zip](https://github.com/stefankober/minimal-systemigram-description-language/releases/download/v0.1.0/systemigram-editor-256MB-darwin.zip) (7.16MB)
 
-#### Linux, build on Ubuntu:
+[systemigram-editor-2GB-darwin.zip](https://github.com/stefankober/minimal-systemigram-description-language/releases/download/v0.1.0/systemigram-editor-2GB-darwin.zip) (7.16MB)
 
-[Wails Editor 256MB](https://github.com/stefankober/minimal-systemigram-description-language/raw/refs/heads/master/msdl-wails-editor-256MB/build/bin/systemigram-editor)
+You may need to use `xattr -dr com.apple.quarantine ~/path/to/Contents/MacOS/systemigram-editor.app` to be able to start it via double click. Do that only if you know what you are doing, the HTML-based editor runs fine without tweaking security.
 
-[Wails Editor 2GB](https://github.com/stefankober/minimal-systemigram-description-language/raw/refs/heads/master/msdl-wails-editor-2GB/build/bin/systemigram-editor)
+#### Windows
 
-The editor size is tiny, 256MB vs. 2GB refers only to the largest memory size of the diagrams.
+[systemigram-editor-256MB-windows.zip](https://github.com/stefankober/minimal-systemigram-description-language/releases/download/v0.1.0/systemigram-editor-256MB-windows.zip) (4.33MB)
+
+[systemigram-editor-2GB-windows.zip](https://github.com/stefankober/minimal-systemigram-description-language/releases/download/v0.1.0/systemigram-editor-2GB-windows.zip) (4.33MB)
 
 # Repo Structure, Dependencies and Licensing
 
