@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         include:
-          - os: ubuntu-latest
+          - os: 
             platform: linux/amd64
           - os: macos-latest
             platform: darwin/universal
@@ -37,7 +37,7 @@ jobs:
         shell: bash
 
       - name: Install Linux GUI dependencies
-      if: matrix.os == 'ubuntu-latest'
+      if: matrix.os == 'ubuntu-20.04'
       run: |
         sudo apt-get update
         sudo apt-get install -y \
@@ -72,7 +72,7 @@ jobs:
           path: msdl-wails-editor-2GB/build/darwin/
 
       - name: Upload Linux binary
-        if: matrix.os == 'ubuntu-latest'
+        if: matrix.os == 'ubuntu-20.04'
         uses: actions/upload-artifact@v4
         with:
           name: systemigram-editor-linux
