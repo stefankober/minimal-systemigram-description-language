@@ -27,7 +27,7 @@ And that is why you need systems thinking. To understand the often complex and f
 
 Here is an image showcasing how a diagram can help reason about systemic problems, and what MSDL looks like (after the comment /\*...\*/). The example is from SysPatLib.
 
-![](/home/kober/2025/Systemigrams/msdl/images/example.png)
+![](images/example.png)
 
 A more formal definition is this: **A system is a collection of interacting parts that form a whole.**
 
