@@ -48,7 +48,6 @@ jobs:
             libgdk-pixbuf2.0-dev \
             libxtst-dev \
             libx11-dev
-              shell: bash
 
       - name: Build app
         run: wails build -platform ${{ matrix.platform }}
