@@ -126,13 +126,33 @@ Try the editor here: [Systemigram Editor](https://stefankober.github.io/minimal-
 
 # How to Use
 
-There are Wails Desktop apps for Linux, Mac and Windows.
-
-(To be linked after setting up GitHub runners)
+### Browser-editor:
 
 There is the GitHub page mentioned above.
 
-Or you just download one of the folders msdl-html-editor-256MB (normal use) or msdl-html-editor-2GB (very large diagrams) to your machine, and open index.html in your browser.
+Or you just download one of the folders msdl-html-editor-256MB (normal use) or msdl-html-editor-2GB (very large diagrams) to your machine, and open index.html in your browser. Their size is tiny, 256MB vs. 2GB refers only to the largest memory size of the diagrams.
+
+### Wails apps:
+
+Windows:
+
+[Wails Editor 256MB](https://github.com/stefankober/minimal-systemigram-description-language/actions/runs/15664157917/artifacts/3331106935)
+
+The editor size is tiny, 256MB vs. 2GB refers only to the largest memory size of the diagrams.
+
+Mac: 
+
+[Wails Editor 256MB](https://github.com/stefankober/minimal-systemigram-description-language/actions/runs/15664157917/artifacts/3331105681)
+
+The editor size is tiny, 256MB vs. 2GB refers only to the largest memory size of the diagrams.
+
+Linux, build on Ubuntu:
+
+[Wails Editor 256MB](https://github.com/stefankober/minimal-systemigram-description-language/raw/refs/heads/master/msdl-wails-editor-256MB/build/bin/systemigram-editor)
+
+[Wails Editor 2GB](https://github.com/stefankober/minimal-systemigram-description-language/raw/refs/heads/master/msdl-wails-editor-2GB/build/bin/systemigram-editor)
+
+The editor size is tiny, 256MB vs. 2GB refers only to the largest memory size of the diagrams.
 
 # Repo Structure, Dependencies and Licensing
 
