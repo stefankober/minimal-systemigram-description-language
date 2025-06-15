@@ -116,7 +116,7 @@ Systemigrams have no formal syntax. Boardman and Sauser emphasize the importance
 
 Semantics are not built into the diagram’s structure. Instead, they are delivered through what the authors call a “SystemiShow”: a narrated walkthrough of the systemigram (p. 173). They admit that “storytelling skills” are essential, and that the diagram’s value is only realized when someone explains it with “a deep understanding of the SoI description—including a knowledge of what it fails to say” (p. 173).
 
-In practice, this means systemigrams do not stand on their own. As the authors themselves remark: “The beauty of a systemigram is that in the systemigram people can see themselves and their own words... but most crucially, they begin to see the roles of others...” (p. 137). The diagram is not self-explanatory; it functions more like a theatrical script, requiring a skilled presenter to animate it.
+In practice, this means systemigrams do not stand on their own. As the authors themselves remark: “The beauty of a systemigram is that in the systemigram people can see themselves and their own words... but most crucially, they begin to see the roles of others...” (p. 137). But still the diagram is not self-explanatory; it functions more like a theatrical script, requiring a skilled presenter to animate it: "People have said, 'Systemigrams are great when Brian (or John) present them, but without him, they don’t work!'" (p. 174).
 
 Without the author, the systemigram often fails to communicate meaning. This limits its utility for independent reading, automated tooling, or shared reuse.
 
