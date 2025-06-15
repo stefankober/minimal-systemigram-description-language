@@ -35,10 +35,10 @@ jobs:
         working-directory: ./msdl-wails-editor-2GB
 
       - name: Upload binary
-              uses: actions/upload-artifact@v4
-              with:
-                name: systemigram-editor-${{ matrix.os }}
-                path: |
-                  ${{ matrix.os == 'windows-latest' && 'msdl-wails-editor-2GB/build/windows/' || '' }}
-                  ${{ matrix.os == 'macos-latest' && 'msdl-wails-editor-2GB/build/darwin/' || '' }}
-                  ${{ matrix.os == 'ubuntu-latest' && 'msdl-wails-editor-2GB/build/bin/' || '' }}
+        uses: actions/upload-artifact@v4
+        with:
+        name: systemigram-editor-${{ matrix.os }}
+        path: |
+              ${{ matrix.os == 'windows-latest' && 'msdl-wails-editor-2GB/build/windows/' || '' }}
+              ${{ matrix.os == 'macos-latest' && 'msdl-wails-editor-2GB/build/darwin/' || '' }}
+              ${{ matrix.os == 'ubuntu-latest' && 'msdl-wails-editor-2GB/build/bin/' || '' }}
