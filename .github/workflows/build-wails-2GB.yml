@@ -39,9 +39,20 @@ jobs:
         run: wails build -platform all
         working-directory: ./msdl-wails-editor-2GB
 
-      - name: Upload build artifacts
+      - name: Upload Windows binary
         uses: actions/upload-artifact@v4
         with:
-          name: wails-app-${{ matrix.os }}
-          path: |
-            ./msdl-wails-editor-2GB/build/bin
+          name: systemigram-editor-windows
+          path: ./build/windows
+
+      - name: Upload macOS binary
+        uses: actions/upload-artifact@v4
+        with:
+          name: systemigram-editor-darwin
+          path: ./build/darwin
+
+      - name: Upload Linux binary
+        uses: actions/upload-artifact@v4
+        with:
+          name: systemigram-editor-linux
+          path: ./build/bin/
