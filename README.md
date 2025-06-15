@@ -94,7 +94,7 @@ Most people speak and read fluently. But diagrams are another language entirely.
 
 This creates a significant barrier to systems thinking. Without accessible visual tools, systemic reasoning often remains abstract, hard to teach, and even harder to share.
 
-Boardman and Sauser recognized this challenge and attempted to overcome it by introducing the **systemigram**: a narrative-based diagram that visually expresses a system’s structure and dynamics (in their book *Systemic Thinking. Building Maps for Worlds of Systems, Wiley: 2013*).
+John Boardman and Brian Sauser recognized this challenge and attempted to overcome it by introducing the **systemigram**: a narrative-based diagram that visually expresses a system’s structure and dynamics (in their book *Systemic Thinking. Building Maps for Worlds of Systems, Wiley: 2013*).
 
 They describe a systemigram as “both a diagram and a system” (p. 102), and elsewhere refer to it as a “graphical narrative of a system’s story” (paraphrased from multiple locations). The systemigram was meant to be readable, collaborative, and expressive—especially for complex social and organizational systems.
 
