@@ -2,7 +2,7 @@
 
 This repo contains MSDL, the Minimal Systemigram Description Language.
 
-It consists of specs, editors, and a pattern library of examples from the systems thinking literature.
+It consists of the [spec](https://github.com/stefankober/minimal-systemigram-description-language/blob/master/msdl-specs/Minimal%20Systemigram%20Description%20Language%20(MSDL)%20Specification.md), [editors](#local-apps), and a [pattern library of examples](https://github.com/stefankober/minimal-systemigram-description-language/tree/master/SysPatLib) from the systems thinking literature.
 
 You may be interested if one of the following applies to you:
 
