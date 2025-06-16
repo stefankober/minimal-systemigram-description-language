@@ -124,13 +124,13 @@ Without the author, the systemigram often fails to communicate meaning. This lim
 
 The idea of this project is to build on systemigrams, but have them stand semantically on their own feet, while keeping the entry barrier low. We hope to achieve this by providing:
 
-- A spec for a Minimal Systemigram Description Language, that is as small as possible. At the same time it should be rich enough to provide for most use cases in applied high level modeling. And most importantly, it should stay faithful to a natural language description of the system (in English, or other left-to-right subject-predicate-object languages).
+- A spec for a Minimal Systemigram Description Language, that is as small as possible. At the same time it should be rich enough to provide for most use cases in applied high level modeling. And most importantly, it should stay faithful to a natural language description of the system (in English, or other left-to-right subject-predicate-object languages): [Minimal Systemigram Description Language (MSDL) Specification.md](https://github.com/stefankober/minimal-systemigram-description-language/blob/master/msdl-specs/Minimal%20Systemigram%20Description%20Language%20(MSDL)%20Specification.md)
 
 - A definition of structured systemigrams in the spec, that guides creation of structured systemigrams in a helpful way without much overhead
 
 - Browser-based and Desktop editors that provide just the needed features, with good help
 
-- A library of patterns that appear in the literature  (SysPatLib)
+- A library of patterns that appear in the literature  (SysPatLib): [minimal-systemigram-description-language/SysPatLib](https://github.com/stefankober/minimal-systemigram-description-language/tree/master/SysPatLib)
 
 - All that with open source licenses. Contributions are welcome! 
 
