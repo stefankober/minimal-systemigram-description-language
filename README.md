@@ -26,7 +26,7 @@ On the left side an example of MSDL from the SysPatLib, on the left side the gen
 
 Systemigram rendered with circo, which is clearer, but flattens two-node-loops. That's why it has not been made default in the first version of the editor.
 
-# A GitHub Page is Worth Even More Than a Thousand words
+# A GitHub Page is Worth Even More Than a Thousand Words
 
 Try the editor here: [Systemigram Editor](https://stefankober.github.io/minimal-systemigram-description-language/)
 
