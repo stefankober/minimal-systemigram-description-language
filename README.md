@@ -30,7 +30,7 @@ Systemigram rendered with circo, which is clearer, but flattens two-node-loops. 
 
 Try the editor here: [Systemigram Editor](https://stefankober.github.io/minimal-systemigram-description-language/)
 
-The help page will give you a good overview of what this project is about.
+The help page will give you a good overview of what this project is about. Examples to copy and paste are in [SysPatLib](https://github.com/stefankober/minimal-systemigram-description-language/tree/master/SysPatLib).
 
 From here you can jump to:
 
