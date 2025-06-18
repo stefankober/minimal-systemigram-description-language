@@ -18,7 +18,7 @@ You may be interested if one of the following applies to you:
 
 ![](images/wails-editor.png)
 
-On the left side an example of MSDL from the SysPatLib, on the left side the generated diagram. Systemigram rendered by dot, which is the default renderer because it creates systemigrams that are ok for almost any use case.
+On the left side an example of MSDL from the [SysPatLib](https://github.com/stefankober/minimal-systemigram-description-language/tree/master/SysPatLib), on the left side the generated diagram. Systemigram rendered by dot, which is the default renderer because it creates systemigrams that are ok for almost any use case.
 
 ## Offline HTML Editor
 
@@ -53,7 +53,7 @@ Traps are a prime example of systems, and a prime example of why systems thinkin
 
 And that is why you need systems thinking. To understand the often complex and feedback based setup of what you are dealing with, to understand what your intervention will cause, or even what the real problem is in the first place.
 
-Here is an image showcasing how a diagram can help reason about systemic problems, and what MSDL looks like (after the comment /\*...\*/). The example is from SysPatLib.
+Here is an image showcasing how a diagram can help reason about systemic problems, and what MSDL looks like (after the comment /\*...\*/). The example is from [SysPatLib](https://github.com/stefankober/minimal-systemigram-description-language/tree/master/SysPatLib).
 
 ![](images/example.png)
 
